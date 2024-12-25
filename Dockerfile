@@ -2,8 +2,8 @@
 FROM rocker/rstudio:latest
 
 # Mengatur environment variables untuk RStudio Server
-ENV PASSWORD=12345  # Ganti dengan password sesuai kebutuhan Anda
-ENV USER=rstudio    # Username default
+ENV PASSWORD=12345
+ENV USER=rstudio
 
 # Memasang dependencies tambahan (opsional, jika dibutuhkan)
 RUN apt-get update && apt-get install -y \
@@ -15,7 +15,7 @@ RUN apt-get update && apt-get install -y \
 # Membuka port yang digunakan RStudio Server
 EXPOSE 8787
 
-# Menambahkan file konfigurasi default RStudio Server (opsional)
+# Menambahkan file konfigurasi default RStudio Server
 RUN echo "www-address=0.0.0.0" >> /etc/rstudio/rserver.conf
 
 # Menjalankan RStudio Server
